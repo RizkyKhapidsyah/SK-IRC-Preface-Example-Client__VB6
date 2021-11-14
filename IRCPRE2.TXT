@@ -1,0 +1,105 @@
+Preface to writing an IRC client in VB - Revised
+-------------------------------------------------------------------------
+
+I. Introduction
+	I've spent many hours in the #visualbasic channel on efnet IRC,
+and I am a regular operator there. The most common question, or topic of
+programming that I am faced with is how to write an IRC client. It seems
+as though almost everyone wants to write an IRC client, but most have
+trouble getting started or get stuck later on.
+
+        The IRC RFC (Request for Comments, RFC1459.TXT) often puzzles the
+average programmer in VB. Which is understandable, when I first started
+programming, at the age of 12, I wanted to jump right in to huge projects
+that were way over my head. So anyone wanting to write an IRC client, my
+first advice to you is to learn VB programming, and especially how to
+deal with strings. Next I STRONGLY suggest you read the IRC RFC. However,
+since many of you are so anxious to get your feet wet, this document and
+included example should help you understand how IRC works as well as get
+started on your first IRC program.
+
+II. The IRC Protocol/Brief overview of IRC
+
+	What is a protocol anyway? The best explanation I can give of a
+protocol is this; a protocol is a defined set of guidelines for behavior.
+Specifically when we talk about protocol in relation to IRC, we mean the
+different strings sent across the internet carrying messages that build
+the entire IRC network.
+
+	The IRC RFC describes the protocol used in order to make either
+a client or server on the IRC network. Again, I strongly suggest you read
+the IRC RFC document. I will try and give you a brief overview of what
+happens on IRC, and then we'll jump right in to the details.
+
+	First of all, the client chooses a host server to connect to, and
+then which port. The adopted standard port is 6667, but many IRC servers
+support this and other ports. Developing an IRC client of any type can
+be annoying to the IRC servers, and could get you banned. I strongly
+suggest you find a private IRC server to test on and get permission to do
+so.
+
+	The client then makes a request for a connection. The server
+opens a connection, and there is now a physical connection between the
+client and the server. The details of how this works is not really
+important to you. At first the connection will appear dead, or silent.
+The server will send nothing, it is up to you, the client, to take the
+first step. You must register with the IRC server in order to get on-line.
+This is typically done in the fashion of NICK, then USER.
+
+	Once the client has registered, and if all goes well is logged on,
+the IRC server will send login information such as the server name,
+number of users, and most importantly the MOTD (Message Of The Day). Each
+message must comply with the protocol for IRC. Once the client is logged
+on, it can then send commands to the server, and the server will respond.
+Now that you understand the basic idea of how the client and server
+"shake hands" in the beginning, we can jump in to the details.
+
+III. Let's get connected!
+
+	Before we go any further, you must understand the basic concepts
+of VB, and how it works. If you don't, read no further. We are going to
+assume that you have a winsock component installed in VB, may I suggest
+an excellent component from Microsoft called the Internet Control Pack,
+its free, and for VB4! If you haven't already, take a little while and
+read the help file that comes with it, and look over the examples.
+
+	Look through the included example and read every part of it. You
+can run it and get on IRC to check it out. This example was written in
+VB4 Pro and uses MS ICP. You may use any of the code from this program
+for whatever purposes you like, free or commercial. The only thing I ask
+is that you give credit where it is due.
+
+	Before reading through this, you should probably open up your
+VB manual or help file and brush up on some commands. Get to know the
+mid$, left$, right$, instr(), len(), etc. commands. Just know strings
+really well and you'll do fine. If not, you'll probably struggle.
+
+	Keep in mind one thing when your running this program, or
+reading through it. This is an example ONLY, not a full client. There is
+very little error checking, and it is only capable of the most basic chat
+functions. Anything further you need to add on your own. This is just to
+give you a basic idea of programming IRC and hopefully get you started on
+your own, more advanced client.
+
+	Oh yea, and I am not responsible for any damage this code may
+cause, blah blah, you know that crap. Its not gunna do anything, I would
+almost guarantee it, and if it does, you probably caused it. =) Hopefully
+you have enough background now in order to start writing your first IRC
+program. I hope the example helps and good luck!
+
+IV. Reference/Credits
+
+The IRC RFC you want is RFC1459.TXT and is available at ds.internic.net,
+  via FTP in the /RFC directory.
+
+The Microsoft Internet Control Pack is available at
+  http://www.microsoft.com/icp
+
+Author Information
+-------------------------------------------------------------------------
+Name	 : Dann Daggett II
+Nickname : Dasmius
+Channel  : #VisualBasic
+E-mail   : danny@telecomputer.com
+
+This document and example are Copyright (C) 1996 by Dann Daggett II
